@@ -19,7 +19,8 @@ import site.metacoding.red.web.dto.response.RespDto;
 public class UsersController {
 
 	private final UsersDao usersDao;
-
+	
+	@GetMapping("/users/{id}")
 	public RespDto<?> getUsers(@PathVariable Integer id) {
 		return new RespDto<>(1, "성공", usersDao.findById(id));
 	}
